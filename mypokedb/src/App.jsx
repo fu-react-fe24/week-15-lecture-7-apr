@@ -6,6 +6,7 @@ import { useState } from 'react';
 import pokemons from './assets/pokemons';
 import './app.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import SinglePokemon from "./pages/SinglePokemon/SinglePokemon";
 
 function App() {
   const [pokemonList, setPokemonList] = useState(pokemons);
@@ -22,6 +23,10 @@ function App() {
     {
       path : '/search',
       element : <SearchPokemon pokemons={pokemonList} />
+    },
+    {
+      path : '/pokemons/:id',
+      element : <SinglePokemon pokemons={pokemonList} />
     }
   ]);
 
