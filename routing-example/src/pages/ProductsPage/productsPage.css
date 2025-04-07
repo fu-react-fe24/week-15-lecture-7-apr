@@ -1,0 +1,9 @@
+.products-page {
+    background-color: goldenrod;
+    nav {
+        display: flex;
+        text-decoration: none;
+        gap: 2rem;
+        font-size: 1.25rem;
+    }
+}

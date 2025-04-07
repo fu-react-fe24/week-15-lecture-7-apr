@@ -1,6 +1,11 @@
 .nav__item {
     padding: .5rem;
     cursor: pointer;
+
+    .nav__link {
+        color: #FFCC05;
+        text-decoration: none;
+    }
 }
 
 .nav__item:hover {

@@ -1,8 +1,21 @@
 import NavItem from '../NavItem/NavItem';
 import './navBar.css';
 
-function NavBar({handleRouting}) {
-    const navItems = ['Pokedex', 'Team Generator', 'Search Pokemon'];
+function NavBar() {
+    const navItems = [
+        {
+            name : 'Pokedex',
+            endpoint : '/'
+        },
+        {
+            name : 'Team Generator',
+            endpoint : '/generator'
+        },
+        {
+            name : 'Search Pokemon',
+            endpoint : '/search'
+        },
+    ];
 
   return (
     <nav className="nav">
@@ -11,8 +24,7 @@ function NavBar({handleRouting}) {
                 navItems.map((item, index) => {
                     return <NavItem 
                         key={index}
-                        text={item}
-                        handleRouting={handleRouting}
+                        navItem={item}
                     />
                 })
             }

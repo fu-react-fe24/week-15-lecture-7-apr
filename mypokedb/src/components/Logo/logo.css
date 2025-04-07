@@ -4,4 +4,9 @@
     padding: 1rem;
     text-align: center;
     border-radius: 10px;
+
+    .header__link {
+      text-decoration: none;
+      color: #FFCC05;
+    }
   }

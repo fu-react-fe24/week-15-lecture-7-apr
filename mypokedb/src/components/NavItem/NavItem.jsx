@@ -1,12 +1,14 @@
 import './navItem.css';
+import { Link } from 'react-router-dom';
 
-function NavItem({text, handleRouting}) {
+function NavItem({navItem}) {
   return (
-    <li 
-      onClick={() => handleRouting(text)} 
+    <li  
       className="nav__item"
     >
-      {text}
+      <Link to={navItem.endpoint} className="nav__link">
+        {navItem.name}
+      </Link>
     </li>
   )
 }

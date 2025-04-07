@@ -5,52 +5,29 @@ import SearchPokemon from './pages/SearchPokemon/SearchPokemon';
 import { useState } from 'react';
 import pokemons from './assets/pokemons';
 import './app.css';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 function App() {
-  const [displayPokedex, setDisplayPokedex] = useState(true);
-  const [displayGenerator, setDisplayGenerator] = useState(false);
-  const [displaySearch, setDisplaySearch] = useState(false);
   const [pokemonList, setPokemonList] = useState(pokemons);
 
-  const handleRouting = (text) => {
-    if(text === 'Pokedex') {
-      setDisplayPokedex(true);
-      setDisplayGenerator(false);
-      setDisplaySearch(false);
-    } else if(text === 'Team Generator') {
-      setDisplayPokedex(false);
-      setDisplayGenerator(true);
-      setDisplaySearch(false);
-    } else if(text === 'Search Pokemon') {
-      setDisplayPokedex(false);
-      setDisplayGenerator(false);
-      setDisplaySearch(true);
+  const router = createBrowserRouter([
+    {
+      path : '/',
+      element : <Pokedex pokemons={pokemonList} />
+    },
+    {
+      path : '/generator',
+      element : <TeamGenerator pokemons={pokemonList} />
+    },
+    {
+      path : '/search',
+      element : <SearchPokemon pokemons={pokemonList} />
     }
-  }
+  ]);
 
   return (
     <section className="app">
-      <Header handleRouting={handleRouting} />
-      {
-        displayPokedex
-        ? <Pokedex pokemons={pokemonList} />
-        : displayGenerator
-        ? <TeamGenerator pokemons={pokemonList} />
-        : displaySearch 
-        ? <SearchPokemon pokemons={pokemonList} />
-        : ''
-      }
-      
-      
-      {/* {
-        displayPokedex && <Pokedex pokemons={pokemonList} />
-      }
-      {
-        displayGenerator && <TeamGenerator pokemons={pokemonList} />
-      }
-      {
-        displaySearch && <SearchPokemon pokemons={pokemonList} />
-      } */}
+      <RouterProvider router={router} />
     </section>
   )
 }
