@@ -1,0 +1,8 @@
+.nav__list {
+    display: flex;
+    gap: 1rem;
+    list-style-type: none;
+    color: #FFCC05;
+    font-size: 1.5rem;
+    font-weight: 700;
+}

@@ -1,0 +1,23 @@
+.generator__form {
+    width: 100%;
+    display: flex;
+    gap: .5rem;
+
+    .generator__input {
+      padding: 1rem;
+    }
+
+    .generator__input--text {
+      flex: 7;
+    }
+
+    .generator__input--number {
+      flex: 1;
+    }
+
+    .generator__button {
+      flex: 1;
+      padding: 1rem;
+      cursor: pointer;
+    }
+  }

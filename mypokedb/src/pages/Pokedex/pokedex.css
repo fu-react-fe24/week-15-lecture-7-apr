@@ -1,0 +1,18 @@
+.pokedex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+  
+    .pokedex__title {
+      font-size: 2rem;
+    }
+  
+    .pokedex__list {
+      width: 100%;
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+  }

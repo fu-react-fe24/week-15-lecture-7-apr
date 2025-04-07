@@ -1,0 +1,30 @@
+.search__section {
+    width: 100%;
+
+    .search__input {
+      padding: 1rem;
+      width: 100%;
+    }
+
+    .search__dropdown {
+      list-style-type: none;
+      
+      .search__item {
+        padding: 1rem;
+        cursor: pointer;
+      }
+
+      .search__item:nth-child(odd) {
+        background-color: rgb(219, 219, 219);
+      }
+
+      .search__item:hover {
+        background-color: rgb(181, 181, 181);
+      }
+    }
+    
+    .search__dropdown--active {
+      border: 1px solid black;
+      border-top: none;
+    }
+  }
